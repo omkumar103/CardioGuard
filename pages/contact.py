@@ -35,7 +35,7 @@ def render():
         contacts = [
             ("📧", "Email",    "om084547@gmail.com",      "mailto:om084547@gmail.com"),
             ("💼", "LinkedIn", "linkedin.com/in/dev",      "https://www.linkedin.com/in/om-kumar-96bb11294/"),
-            ("🐙", "GitHub",   "github.com/cardioguard",   "https://github.com/"),
+            ("🐙", "GitHub",   "github.com/cardioguard",   "https://github.com/omkumar103/CardioGuard"),
         ]
 
         for icon, label, display, href in contacts:
