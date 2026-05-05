@@ -1,0 +1,739 @@
+/* ============================================================
+   CardioGuard AI — Custom Stylesheet
+   Design System: Medical-Modern, Navy × Teal × Clinical White
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --navy: #0B1D3A;
+  --navy-mid: #122444;
+  --navy-lite: #1A3460;
+  --teal: #00C9B1;
+  --teal-dim: #00A896;
+  --teal-glow: rgba(0, 201, 177, .18);
+  --red: #E84545;
+  --red-dim: #C62828;
+  --green: #2ECC71;
+  --green-dim: #27AE60;
+  --orange: #F39C12;
+  --white: #F4F8FF;
+  --card-bg: rgba(255, 255, 255, .04);
+  --border: rgba(0, 201, 177, .15);
+  --shadow: 0 8px 32px rgba(0, 0, 0, .35);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ── Global Reset ──────────────────────────────────────────── */
+html,
+body,
+[class*="css"] {
+  font-family: var(--font-body) !important;
+  background: var(--navy) !important;
+  color: var(--white) !important;
+}
+
+/* Hide Streamlit chrome */
+#MainMenu,
+footer {
+  visibility: hidden;
+}
+
+header[data-testid="stHeader"] {
+  background: transparent !important;
+}
+
+.stDeployButton {
+  display: none !important;
+}
+
+[data-testid="stToolbar"] {
+  display: none !important;
+}
+
+[data-testid="stDecoration"] {
+  display: none !important;
+}
+
+[data-testid="stStatusWidget"] {
+  display: none !important;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--teal-dim);
+  border-radius: 99px;
+}
+
+/* ── Main container ────────────────────────────────────────── */
+.block-container {
+  padding: 0 !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+.stApp {
+  background: var(--navy) !important;
+}
+
+section[data-testid="stSidebar"] {
+  background: var(--navy-mid) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.stButton>button {
+  font-family: var(--font-head) !important;
+  font-weight: 700 !important;
+  letter-spacing: .04em !important;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dim)) !important;
+  color: var(--navy) !important;
+  border: none !important;
+  border-radius: 99px !important;
+  padding: .7rem 2rem !important;
+  transition: all .25s ease !important;
+  box-shadow: 0 4px 20px rgba(0, 201, 177, .35) !important;
+}
+
+.stButton>button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 28px rgba(0, 201, 177, .5) !important;
+  color: var(--navy) !important;
+}
+
+.stButton>button:active {
+  transform: translateY(0) !important;
+}
+
+/* ── Inputs & Selects ───────────────────────────────────────── */
+.stSelectbox>div>div,
+.stNumberInput>div>div>input,
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea {
+  background: rgba(255, 255, 255, .06) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+}
+
+.stSelectbox>div>div:focus-within,
+.stNumberInput>div>div>input:focus,
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus {
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px rgba(0, 201, 177, .12) !important;
+}
+
+/* Dropdown option text */
+[data-baseweb="select"] [role="option"] {
+  color: var(--white) !important;
+  background: var(--navy-mid) !important;
+}
+
+[data-baseweb="select"] [role="option"]:hover {
+  background: var(--navy-lite) !important;
+}
+
+/* Dropdown menu background */
+[data-baseweb="popover"]>div,
+[data-baseweb="menu"] {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* Sliders */
+.stSlider>div {
+  padding: 0 !important;
+}
+
+[data-testid="stSlider"]>div>div>div>div {
+  background: var(--teal) !important;
+}
+
+[data-testid="stSlider"] [data-baseweb="slider"] [data-testid="stThumbValue"] {
+  color: var(--white) !important;
+  background: var(--teal) !important;
+}
+
+/* Toggle */
+.stCheckbox label,
+.stRadio label {
+  color: var(--white) !important;
+}
+
+[data-testid="stCheckbox"] span {
+  color: var(--white) !important;
+}
+
+/* Number input */
+.stNumberInput button {
+  background: rgba(255, 255, 255, .08) !important;
+  border-color: var(--border) !important;
+  color: var(--white) !important;
+}
+
+.stNumberInput button:hover {
+  background: var(--teal-glow) !important;
+  border-color: var(--teal) !important;
+}
+
+/* Labels */
+label[data-testid="stWidgetLabel"],
+.stSlider label,
+div[data-testid="stMarkdownContainer"] p {
+  color: rgba(244, 248, 255, .75) !important;
+  font-family: var(--font-body) !important;
+}
+
+/* ── Sidebar toggle button fix ──────────────────────────────── */
+[data-testid="collapsedControl"] {
+  color: var(--white) !important;
+}
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.cg-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cg-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .45);
+}
+
+.cg-card-teal {
+  border-color: rgba(0, 201, 177, .4);
+  background: rgba(0, 201, 177, .06);
+}
+
+.cg-card-red {
+  border-color: rgba(232, 69, 69, .4);
+  background: rgba(232, 69, 69, .06);
+}
+
+.cg-card-green {
+  border-color: rgba(46, 204, 113, .4);
+  background: rgba(46, 204, 113, .06);
+}
+
+.cg-card-orange {
+  border-color: rgba(243, 156, 18, .4);
+  background: rgba(243, 156, 18, .06);
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+.cg-heading {
+  font-family: var(--font-head) !important;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  background: linear-gradient(135deg, #fff 30%, var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cg-subheading {
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  margin-bottom: .25rem;
+}
+
+.cg-body {
+  font-size: .95rem;
+  color: rgba(244, 248, 255, .7);
+  line-height: 1.65;
+}
+
+.cg-label {
+  font-size: .75rem;
+  color: rgba(244, 248, 255, .5);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+/* ── Nav bar ─────────────────────────────────────────────────── */
+.cg-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 3rem;
+  background: rgba(11, 29, 58, .92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.cg-nav-logo {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.cg-nav-logo span {
+  color: var(--teal);
+}
+
+.cg-nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.cg-nav-link {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: .9rem;
+  color: rgba(244, 248, 255, .65);
+  text-decoration: none;
+  letter-spacing: .05em;
+  transition: color .2s;
+  cursor: pointer;
+}
+
+.cg-nav-link:hover,
+.cg-nav-link.active {
+  color: var(--teal);
+}
+
+/* ── Navigation Pills (Radio Fix) ───────────────────────────── */
+div[data-testid="stRadio"] {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  z-index: 1000;
+}
+
+div[data-testid="stRadio"]>label {
+  display: none;
+}
+
+/* Hide 'Navigation' label */
+div[data-testid="stRadio"] div[role="radiogroup"] {
+  flex-direction: row !important;
+  gap: 0.5rem !important;
+  justify-content: center;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"]>label {
+  background: rgba(255, 255, 255, .05) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 99px !important;
+  padding: .4rem 1.2rem !important;
+  color: rgba(244, 248, 255, .6) !important;
+  font-family: var(--font-head) !important;
+  font-weight: 600 !important;
+  font-size: .88rem !important;
+  transition: all .25s ease !important;
+  cursor: pointer !important;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"]>label:hover {
+  background: rgba(0, 201, 177, .08) !important;
+  border-color: rgba(0, 201, 177, .3) !important;
+  color: var(--white) !important;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] label[data-checked="true"] {
+  background: rgba(0, 201, 177, .18) !important;
+  border-color: var(--teal) !important;
+  color: var(--teal) !important;
+  box-shadow: 0 0 15px rgba(0, 201, 177, .15) !important;
+}
+
+/* Hide the actual radio circle */
+div[data-testid="stRadio"] div[role="radiogroup"] div[data-testid="stMarkdownContainer"] {
+  margin-left: 0 !important;
+}
+
+div[data-testid="stRadio"] [data-testid="stWidgetLabel"] {
+  display: none !important;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] div[role="radio"] {
+  display: none !important;
+}
+
+/* ── Hero section ────────────────────────────────────────────── */
+.cg-hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(0, 201, 177, .08) 0%, transparent 65%),
+    radial-gradient(ellipse at 20% 80%, rgba(0, 168, 150, .06) 0%, transparent 55%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300C9B1' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ── Metric cards ────────────────────────────────────────────── */
+.cg-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.2rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  height: 100%;
+}
+
+.cg-metric-value {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.cg-metric-label {
+  font-size: .78rem;
+  color: rgba(244, 248, 255, .5);
+  margin-top: .2rem;
+}
+
+/* ── Progress bars ───────────────────────────────────────────── */
+.cg-progress-wrap {
+  width: 100%;
+  background: rgba(255, 255, 255, .08);
+  border-radius: 99px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: .4rem;
+}
+
+.cg-progress-bar {
+  height: 100%;
+  border-radius: 99px;
+  transition: width .8s cubic-bezier(.4, 0, .2, 1);
+}
+
+.cg-progress-teal {
+  background: linear-gradient(90deg, var(--teal-dim), var(--teal));
+}
+
+.cg-progress-red {
+  background: linear-gradient(90deg, var(--red-dim), var(--red));
+}
+
+.cg-progress-green {
+  background: linear-gradient(90deg, var(--green-dim), var(--green));
+}
+
+.cg-progress-orange {
+  background: linear-gradient(90deg, #c87800, var(--orange));
+}
+
+/* ── Risk result card ────────────────────────────────────────── */
+.cg-result-high {
+  border: 2px solid rgba(232, 69, 69, .6);
+  background: linear-gradient(135deg, rgba(232, 69, 69, .12), rgba(198, 40, 40, .06));
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+}
+
+.cg-result-low {
+  border: 2px solid rgba(46, 204, 113, .6);
+  background: linear-gradient(135deg, rgba(46, 204, 113, .12), rgba(39, 174, 96, .06));
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+}
+
+.cg-result-icon {
+  font-size: 3.5rem;
+  margin-bottom: .5rem;
+}
+
+.cg-result-label {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+/* ── Feature icon circle ─────────────────────────────────────── */
+.cg-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--teal-glow);
+  border: 1px solid rgba(0, 201, 177, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ── Section wrapper ─────────────────────────────────────────── */
+.cg-section {
+  padding: 3rem 4rem;
+}
+
+.cg-section-title {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: .5rem;
+  color: var(--white);
+}
+
+/* ── Badge ───────────────────────────────────────────────────── */
+.cg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(0, 201, 177, .15);
+  border: 1px solid rgba(0, 201, 177, .4);
+  border-radius: 99px;
+  padding: .3rem .9rem;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--teal);
+  letter-spacing: .06em;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.cg-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.cg-footer {
+  padding: 3rem 4rem;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, .2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.cg-footer-copy {
+  font-size: .82rem;
+  color: rgba(244, 248, 255, .4);
+}
+
+/* ── Alerts / Streamlit native ──────────────────────────────── */
+.stAlert {
+  background: rgba(255, 255, 255, .04) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+[data-testid="stNotification"] {
+  background: rgba(255, 255, 255, .04) !important;
+}
+
+/* ── Dataframe ───────────────────────────────────────────────── */
+[data-testid="stDataFrame"] {
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stDataFrame"] table {
+  background: var(--card-bg) !important;
+}
+
+[data-testid="stDataFrame"] th {
+  background: rgba(0, 201, 177, .12) !important;
+  color: var(--teal) !important;
+  font-family: var(--font-head) !important;
+}
+
+[data-testid="stDataFrame"] td {
+  color: var(--white) !important;
+}
+
+/* ── Expander ────────────────────────────────────────────────── */
+[data-testid="stExpander"] {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+[data-testid="stExpander"] summary {
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+}
+
+[data-testid="stExpanderToggleIcon"] {
+  color: var(--teal) !important;
+}
+
+/* ── Sidebar customization ───────────────────────────────────── */
+[data-testid="stSidebarContent"] {
+  padding: 1rem .5rem !important;
+}
+
+.sidebar-section-title {
+  font-family: var(--font-head);
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  padding: .8rem .5rem .3rem;
+  border-top: 1px solid var(--border);
+  margin-top: .5rem;
+}
+
+/* ── Images in features ──────────────────────────────────────── */
+[data-testid="stImage"] {
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+}
+
+[data-testid="stImage"] img {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* ── Spinner ─────────────────────────────────────────────────── */
+[data-testid="stSpinner"] {
+  color: var(--teal) !important;
+}
+
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 201, 177, .4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 201, 177, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 201, 177, 0);
+  }
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.15);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
+.anim-fade-up {
+  animation: fadeInUp .7s ease both;
+}
+
+.anim-delay-1 {
+  animation-delay: .1s;
+}
+
+.anim-delay-2 {
+  animation-delay: .2s;
+}
+
+.anim-delay-3 {
+  animation-delay: .3s;
+}
+
+.anim-delay-4 {
+  animation-delay: .4s;
+}
+
+.anim-pulse {
+  animation: pulse-ring 2.5s ease infinite;
+}
+
+.anim-heart {
+  animation: heartbeat 1.6s ease infinite;
+  display: inline-block;
+}
+
+/* ── Responsive tweaks ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cg-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .cg-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .cg-nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .cg-section-title {
+    font-size: 1.6rem;
+  }
+
+  .cg-nav-links {
+    gap: 1.2rem;
+  }
+
+  .cg-footer {
+    padding: 1.5rem;
+  }
+}
